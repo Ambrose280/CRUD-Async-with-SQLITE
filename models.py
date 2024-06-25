@@ -4,8 +4,8 @@ from tortoise.models import Model
 
 class User(Model):
     id = fields.IntField(pk=True)
-    username = fields.CharField(max_length=50)
-    email = fields.CharField(max_length=100)
+    telegram_id = fields.CharField(max_length=50, unique=True)
+    gamepts = fields.IntField(default=0)
 
     class Meta:
         table = "user"
